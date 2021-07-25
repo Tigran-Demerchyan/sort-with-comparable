@@ -2,7 +2,11 @@ package com.compare;
 
 import java.util.List;
 
-public class SortingAlgorithms {
+public final class  SortingAlgorithms {
+
+    private SortingAlgorithms(){
+
+    }
 
     public static void insertionSort(Comparable[] arr) {
         for (int i = 1; i < arr.length; i++) {
@@ -16,9 +20,9 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void insertionSort(List<Comparable> arr) {
+    public static <T extends Comparable> void  insertionSort(List<T> arr) {
         for (int i = 1; i < arr.size(); i++) {
-            Comparable current = arr.get(i);
+            T current = arr.get(i);
             int j = i;
             while (j > 0 && current.compareTo(arr.get(i - 1)) > 0) {
                 arr.set(j, arr.get(j - 1));
@@ -40,11 +44,11 @@ public class SortingAlgorithms {
         }
     }
 
-    public static void bubbleSort(List<Comparable> arr) {
+    public static <T extends Comparable> void bubbleSort(List<T> arr) {
         for (int i = 0; i < arr.size(); i++) {
             for (int j = 0; j < arr.size() - 1; j++) {
                 if (arr.get(j).compareTo(arr.get(j + 1)) > 0) {
-                    Comparable temp = arr.get(j);
+                    T temp = arr.get(j);
                     arr.set(j, arr.get(j + 1));
                     arr.set(j + 1, temp);
 

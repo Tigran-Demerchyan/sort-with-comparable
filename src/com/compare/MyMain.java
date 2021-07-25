@@ -19,6 +19,8 @@ public class MyMain {
         SortingAlgorithms.bubbleSort(comparables);
         System.out.println(Arrays.toString(comparables));
 
+        SortingAlgorithms.insertionSort(rectangles);
+
 
     }
 }
